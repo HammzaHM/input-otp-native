@@ -15,6 +15,7 @@ export const OTPInput = React.forwardRef<OTPInputRef, OTPInputProps>(
       containerStyle,
       onComplete,
       render,
+      shouldClearInputOnPress = true,
       ...props
     },
     ref
@@ -50,7 +51,9 @@ export const OTPInput = React.forwardRef<OTPInputRef, OTPInputProps>(
 
     const onPress = React.useCallback(() => {
       actions.focus();
-      actions.clear();
+      if (shouldClearInputOnPress) {
+        actions.clear(); 
+      }
     }, [actions]);
 
     return (
