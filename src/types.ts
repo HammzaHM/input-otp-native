@@ -38,6 +38,7 @@ export type InputOTPRenderFn = (props: RenderProps) => React.ReactNode;
 
 export type OTPInputProps = OTPInputBaseProps & {
   render?: InputOTPRenderFn;
+  shouldClearInputOnPress?: boolean
 };
 
 export type OTPInputRef = {
